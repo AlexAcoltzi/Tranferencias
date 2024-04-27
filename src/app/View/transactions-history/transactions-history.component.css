@@ -1,0 +1,9 @@
+.generic-size {
+    width: 200px !important;
+    height: 200px !important;
+}
+
+.custom-size {
+    width: 300px !important;
+    height: 300px !important;
+}

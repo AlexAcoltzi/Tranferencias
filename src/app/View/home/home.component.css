@@ -1,0 +1,11 @@
+.custom-size-current-balance, .custom-size-main-expensive, .custom-size-transactions-history{
+    max-width: 25rem;
+}
+
+.custom-size-transactions-history {
+    max-height: 30rem;
+}
+
+.custom-size-current-balance {
+    max-height: 15rem;
+}
