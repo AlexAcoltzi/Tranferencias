@@ -11,6 +11,7 @@ import { TransactionsHistoryComponent } from './View/transactions-history/transa
 import { TransferComponent } from './View/transfer/transfer.component';
 import { TransferFormComponent } from './View/transfer-form/transfer-form.component';
 import { MainExpensiveComponent } from './View/main-expensive/main-expensive.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { MainExpensiveComponent } from './View/main-expensive/main-expensive.com
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

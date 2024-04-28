@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Numbers, StringConstants } from 'src/app/Constants/StringContants';
 
 @Component({
@@ -10,18 +10,29 @@ import { Numbers, StringConstants } from 'src/app/Constants/StringContants';
 export class TransferFormComponent {
 
   selectedAccount: string = StringConstants.Empty;
-  destinationAccount: number = Numbers.zero;
-  amount: number = Numbers.zero;
+  destinationAccount: string = StringConstants.Empty;
+  amount: string = StringConstants.Empty;
+  concept: string = StringConstants.Empty;
   transferGroup!: FormGroup; 
 
-  constructor() {}
+  constructor(
+    private readonly formBuilder: FormBuilder
+  ) {}
 
   ngOnInit() {
-
+    this.transferGroup = this.formBuilder.group({
+      originAccount: ['', Validators.required],
+      destinationAccount: ['', Validators.required],
+      amount: ['', Validators.required],
+    });
   }
 
   showData(){
     alert(`cuenta seeccionada: ${this.selectedAccount} \n cuenta destino: ${this.destinationAccount} \n monto: ${this.amount}`)
+  }
+
+  clearForm(){
+    this.transferGroup.reset();
   }
 
 }

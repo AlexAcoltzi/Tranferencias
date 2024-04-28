@@ -1,16 +1,16 @@
 <ng-container>
   <div class="container d-flex justify-content-center align-items-center">
     <div class="container mt-4 align-text-center">
-      <h1 class="align-text-center">Welcome to your online banking Hello</h1>
+      <h1 class="align-text-center">Welcome to your online banking {{nameUser}}</h1>
       <div class="row mt-4 gap-3">
-        <div class="card col-md-4 custom-size-transactions-history">
+        <div class="card col custom-size-transactions-history">
           <app-transactions-history></app-transactions-history>
         </div>
-        <div class="card col-md-4  custom-size-main-expensive">
+        <div class="card col  custom-size-main-expensive">
           <app-main-expensive></app-main-expensive>
         </div>
-        <div class="card col-md-4 custom-size-current-balance">
-          <app-current-balance></app-current-balance>
+        <div class="card col custom-size-current-balance">
+          <app-current-balance [isCurrentBalance]="true"></app-current-balance>
         </div>
       </div>
     </div>

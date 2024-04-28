@@ -10,8 +10,8 @@
             </div>
         </div>
       </div>
-      <div class="col mt-4">
-        <app-current-balance></app-current-balance>
+      <div class="col mt-4" *ngFor="let account of accountsInfo">
+        <app-current-balance [numberAccount]="account.idCuenta"></app-current-balance>
       </div>
     </div>
   </div>

@@ -1,25 +1,29 @@
 <ng-container>
     <div class="container d-flex justify-content-center align-items-center">
-        <div class="login-form">
+        <form [formGroup]="loginForm" class="login-form">
             <div class="form-group my-5">
-                <label for="username" class="label-user"
-                [ngClass]="showErrorUsername ? 'is-error': 'default-color'">Username</label>
-                <input type="text" id="username" class="form-control"
-                [ngClass]="showErrorUsername ? 'border-error': 'default-border'" placeholder="Username"
-                [(ngModel)]="username" (blur)="validateUsername()">
-                <label *ngIf="showErrorUsername" class="is-error">La contraseña no cumple con la cantidad minima</label>
+                <label for="username" class="label-user" [ngClass]="loginForm.get('username')?.invalid && (loginForm.get('username')?.dirty || loginForm.get('username')?.touched) ? 
+                'is-error': 'default-color'">Username</label>
+                <input type="text" id="username" class="form-control" name="username" formControlName="username"
+                    [ngClass]="loginForm.get('username')?.invalid && (loginForm.get('username')?.dirty || loginForm.get('username')?.touched) ? 'border-error': 'default-border'"
+                    placeholder="Username" [(ngModel)]="username">
+                <label
+                    *ngIf="loginForm.get('username')?.invalid && (loginForm.get('username')?.dirty || loginForm.get('username')?.touched)"
+                    class="is-error">La contraseña no cumple con la cantidad minima</label>
             </div>
             <div class="form-group my'4">
                 <label for="password" class="label-user"
-                [ngClass]="showErrorPassword ? 'is-error': 'default-color'">Password</label>
-                <input type="password" id="password" class="form-control" 
-                [ngClass]="showErrorPassword ? 'border-error': 'default-border'" placeholder="Password"
-                [(ngModel)]="password" (blur)="validatePassword()">
-                <label *ngIf="showErrorPassword" class="is-error">La contraseña no cumple con la cantidad minima</label>
+                    [ngClass]="loginForm.get('password')?.invalid && (loginForm.get('password')?.dirty || loginForm.get('password')?.touched) ? 'is-error': 'default-color'">Password</label>
+                <input type="password" id="password" class="form-control" name="password" formControlName="password"
+                    [ngClass]="loginForm.get('password')?.invalid && (loginForm.get('password')?.dirty || loginForm.get('password')?.touched) ? 'border-error': 'default-border'"
+                    placeholder="Password" [(ngModel)]="password">
+                <label
+                    *ngIf="loginForm.get('password')?.invalid && (loginForm.get('password')?.dirty || loginForm.get('password')?.touched)"
+                    class="is-error">La contraseña no cumple con la cantidad minima</label>
             </div>
             <div class="d-flex justify-content-center align-items-center my-5">
-                <button class="login-btn" (click)="showeSubmit()">Login</button>
+                <button class="login-btn" (click)="submitForm()">Login</button>
             </div>
-        </div>
+        </form>
     </div>
 </ng-container>

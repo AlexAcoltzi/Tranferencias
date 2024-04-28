@@ -13,6 +13,11 @@
     color: #555;
 }
 
+.form-control {
+  border-radius: 10px;
+  padding-left: 15px;
+}
+
 .transfer-btn {
     border-radius: 10px;
     padding: 10px 20px;
