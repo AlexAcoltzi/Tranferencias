@@ -28,7 +28,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------
-Para ejecutar el progrtama al clonar el respositorio se debe ejecutar el comando npm install, esto agregara las dependencias necesarias-
+Para levantar el proyecto, al clonar el respositorio se debe ejecutar el comando npm install, esto agregara las dependencias necesarias-
 
 Se debe tener instalado Node.js y Angular CLI version 15
 
