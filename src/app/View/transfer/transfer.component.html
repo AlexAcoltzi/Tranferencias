@@ -2,15 +2,21 @@
     <div class="d-flex flex-column gap-4 mt-4">
       <div class="col">
         <div class="d-flex gap-4 align-items-center">
+           <!-- Contenedor para el formulario de transferencia -->
             <div class="card col-6">
+               <!-- Componente del formulario de transferencia -->
                 <app-transfer-form></app-transfer-form>
             </div>
+            <!-- Contenedor para el historial de transacciones -->
             <div class="col-6 custom-size">
+              <!-- Componente para el historial de transacciones -->
                 <app-transactions-history [showBody]="false" [showTite]="false" [customSize]="true"></app-transactions-history>
             </div>
         </div>
       </div>
+      <!-- Iteración sobre las cuentas de usuario -->
       <div class="col mt-4" *ngFor="let account of accountsInfo">
+        <!-- Tabla para cada cuenta de usuario -->
         <app-current-balance [numberAccount]="account.idCuenta"></app-current-balance>
       </div>
     </div>

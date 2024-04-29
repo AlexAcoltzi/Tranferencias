@@ -1,9 +1,13 @@
 <ng-container>
     <div>
+         <!-- Renderiza un gráfico de pastel -->
         <div>
+             <!-- Utiliza un elemento canvas para dibujar el gráfico -->
             <canvas class="mx-auto" id="myPieChart" [ngClass]="customSize ? 'custom-size' : 'generic-size'"></canvas>
         </div>
+        <!-- Título opcional del componente -->
         <h1 *ngIf="showTite" class="mt-4">Transactions History</h1>
+        <!-- Cuerpo de texto opcional -->
         <span *ngIf="showBody" class="mt-2">
             Lorem ipsum dolor sit amet consectetur adipiscing elit, quisque urna sodales ac est neque ullamcorper, senectus arcu nunc auctor lacus sagittis. 
             Erat ante dictum netus himenaeos platea luctus sociosqu sociis quisque, pharetra ligula non vulputate porta odio ultricies feugiat, 

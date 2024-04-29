@@ -1,5 +1,6 @@
-export class GetTransferAccounts {
+export class GetTransferAccountsResponse {
 
+    idUsuario!: number;;
     idCuentaOrigen!: number;
     idCuentaDestino!: number;
     concepto!: string;

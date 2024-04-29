@@ -4,12 +4,15 @@
       <h1 class="align-text-center">Welcome to your online banking {{nameUser}}</h1>
       <div class="row mt-4 gap-3">
         <div class="card col custom-size-transactions-history">
+           <!-- Componente de historial de transacciones -->
           <app-transactions-history></app-transactions-history>
         </div>
         <div class="card col  custom-size-main-expensive">
+           <!-- Componente de gastos principales -->
           <app-main-expensive></app-main-expensive>
         </div>
         <div class="card col custom-size-current-balance">
+          <!-- Componente de saldo actual, como es la ventana principal mostraremos la información de las cuentas-->
           <app-current-balance [isCurrentBalance]="true"></app-current-balance>
         </div>
       </div>

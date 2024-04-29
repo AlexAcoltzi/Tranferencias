@@ -1,44 +1,48 @@
 <div>
+  <!-- Sección para mostrar el saldo actual de las cuentas -->
   <div *ngIf="isCurrentBalance">
     <div>
       <h2>Current Balances</h2>
       <table class="table table-striped">
-          <thead>
-              <tr>
-                <th>Account No.</th>
-                <th>Balance</th>
-                <th>Date of Latest Transfer</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr *ngFor="let accountInfo of accountsInfo">
-                <td>{{accountInfo.idCuenta}}</td>
-                <td>{{accountInfo.saldo}}</td>
-                <td>21/May/19</td>
-              </tr>
-            </tbody>
+        <thead>
+          <tr>
+            <th>Account No.</th>
+            <th>Balance</th>
+            <th>Date of Latest Transfer</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Iteración sobre las cuentas del usuario para mostrar sus información -->
+          <tr *ngFor="let accountInfo of accountsInfo">
+            <td>{{accountInfo.idCuenta}}</td>
+            <td>{{accountInfo.saldo}}</td>
+            <td>{{lastTransferDateMap[accountInfo.idCuenta] || '-'}}</td>
+          </tr>
+        </tbody>
       </table>
-  </div>
+    </div>
   </div>
 
-    <div *ngIf="!isCurrentBalance">
-      <table class="table table-striped">
-        <thead>
-            <tr>
-              <th>Origin Account</th>
-              <th>Destinetion Account</th>
-              <th>Transfer Date</th>
-              <th>Amount</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let transfer of transferAccounts">
-              <td>{{transfer.idCuentaOrigen}}</td>
-              <td>{{transfer.idCuentaDestino}}</td>
-              <td>{{transfer.fecha}}</td>
-              <td>{{transfer.monto}}</td>
-            </tr>
-          </tbody>
+  <!-- Sección para mostrar las transferencias de una cuenta específica -->
+  <div *ngIf="!isCurrentBalance">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Origin Account</th>
+          <th>Destinetion Account</th>
+          <th>Transfer Date</th>
+          <th>Amount</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Iteración sobre las transferencias de la cuenta específica -->
+        <tr *ngFor="let transfer of transferAccounts">
+          <td>{{transfer.idCuentaOrigen}}</td>
+          <td>{{transfer.idCuentaDestino}}</td>
+          <td>{{transfer.fecha}}</td>
+          <td>{{transfer.monto}}</td>
+        </tr>
+      </tbody>
     </table>
   </div>
 </div>

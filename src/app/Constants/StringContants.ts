@@ -10,10 +10,13 @@ export enum PathModel {
 }
 
 export enum Numbers {
-    zero = 0
+    zero = 0,
+    one = 1
 }
 
 export enum PathRequest {
     login = 'http://localhost:9200/loginRedSinergia/login-user',
-    getAccounts = 'http://localhost:9300/Accounts/getAccounts'
+    getAccounts = 'http://localhost:9300/Accounts/getAccounts',
+    getTransfers = 'http://localhost:9300/transfers/getTransfers',
+    setTransfer = 'http://localhost:9300/transfers/setTransfers'
 }

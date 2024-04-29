@@ -25,3 +25,15 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+Para ejecutar el progrtama al clonar el respositorio se debe ejecutar el comando npm install, esto agregara las dependencias necesarias-
+
+Se debe tener instalado Node.js y Angular CLI version 15
+
+Existen muchas mejoras aún disponibles, como el manejo de eventos, proteger las rutas con un CanGuard, incluso hacer más componentes genericos y homologar los datos.
+
+En cuanto a los formularios se manejan de dos maneras, el Login cambiando estilos para mostrar errores o en el formulario de transferencias con alertas, ambas se pueden homologar a su propio estilo.
+
+Son libres de poder mejorar este proyecto que funciona como base, tiene comentarios donde describe la finalidad de variables, funciones, etc.

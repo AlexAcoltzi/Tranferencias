@@ -1,17 +1,23 @@
 <ng-container>
+  <!-- Barra de navegación -->
   <nav class="navbar navbar-expand-lg navbar-light bg-light py-0">
     <div class="container-fluid" style="background: #2385e7;">
+      <!-- Logo -->
       <a class="navbar-brand" href="#"><img src="../assets/logo/logo.jfif" width="50" height="50" /></a>
+      <!-- Menú de navegación que se mostrara dependiendo de si la sesión esta activa -->
       <div *ngIf="isLoginValue" class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <!-- Opción: Home -->
           <li class="nav-item">
             <a class="nav-link active cursor-pointer" aria-current="page" (click)="goToNextView(1)">Home</a>
           </li>
+           <!-- Opción: Transfer -->
           <li class="nav-item">
             <a class="nav-link active cursor-pointer" aria-current="page" (click)="goToNextView(2)">Transfer</a>
           </li>
         </ul>
       </div>
+       <!-- Opción: Cerrar sesión -->
       <div *ngIf="isLoginValue" class="mr-3">
         <a class="nav-link active" aria-current="page" (click)="logout()" style="cursor: pointer;">Cerrar sesión</a>
       </div>
